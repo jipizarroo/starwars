@@ -1,21 +1,23 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Home from './views/home';
+import People from './views/people';
 import NotFound from './views/notfound';
 import NavBar from './components/navbar';
-import Services from './views/services';
-import Contact from './views/contact';
+import Vehicles from './views/vehicles';
+import Planets from './views/planets';
 
 
 
 const Layout = () => {
+                                    // siempre la ruta que recive más parametros primero.
     return(
         <BrowserRouter>
         <NavBar />
         <Switch>
-        <Route exact path={"/"} component={Home} />
-        <Route exact path={"/services"} component={Services} />
-        <Route exact path={"/contact"} component={Contact} />
+        <Route exact path={"/services/:serv_id/category/:cat_id"} component={Vehicles} />
+        <Route exact path={"/services"} component={Vehicles} />
+        <Route exact path={"/contact"} component={Planets} />
+        <Route exact path={"/"} component={People} />                                                     
         <Route component={NotFound} />
         </Switch>
         </BrowserRouter>

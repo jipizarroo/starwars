@@ -11,8 +11,7 @@ import './index.css';
 import 'jquery';
 import 'popper.js';
 import 'bootstrap';
-import App from './App';
-import {ContextWrapper, ContextWeapper} from './store/appContext';
+import {ContextWrapper} from './store/appContext';
 import Layout from './layout';
 import * as serviceWorker from './serviceWorker';
 

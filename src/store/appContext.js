@@ -11,6 +11,9 @@ export class ContextWrapper extends React.Component {
                 todos: ["Make the bed", "Take out the trash"],
                 name: 'Javier',
                 people: {},
+                planets:{},
+                vehicles: {},
+
             },
             actions: {
                 addTask: title => {
@@ -41,12 +44,40 @@ export class ContextWrapper extends React.Component {
                             )
                         });
                     });
+                },
+                getPlanets: url => {
+                    fetch(url)
+                    .then(resp => resp.json())
+                    .then(data => {
+                        console.log(data);
+                        this.setState({
+                            store: Object.assign(
+                                this.state.store,
+                                { planets: data }
+                            )
+                        });
+                    })
+                },
+                getVehicles: url => {
+                    fetch(url)
+                    .then(resp => resp.json())
+                    .then(data => {
+                        console.log(data);
+                        this.setState({
+                            store: Object.assign(
+                                this.state.store,
+                                {vehicles: data}
+                            )
+                        });
+                    })
                 }
             }
         };
     }
     componentDidMount(){
         this.state.actions.getPeople("https://swapi.co/api/people/");
+        this.state.actions.getPlanets("https://swapi.co/api/planets/")
+        this.state.actions.getVehicles("https://swapi.co/api/vehicles/")
     }
 
     render() {
