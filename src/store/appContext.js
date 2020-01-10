@@ -13,6 +13,7 @@ export class ContextWrapper extends React.Component {
                 people: {},
                 planets:{},
                 vehicles: {},
+                getKeyPeople: ""
 
             },
             actions: {
@@ -70,7 +71,18 @@ export class ContextWrapper extends React.Component {
                             )
                         });
                     })
+                },
+                
+                getKeyPeople: a => {
+                    this.setState({
+                        store: Object.assign(
+                            this.state.store,
+                            {getKeyPeople: a}
+                        )
+                    })
+
                 }
+
             }
         };
     }

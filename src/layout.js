@@ -5,6 +5,7 @@ import NotFound from './views/notfound';
 import NavBar from './components/navbar';
 import Vehicles from './views/vehicles';
 import Planets from './views/planets';
+import CardPeople from './views/cardPeople';
 
 
 
@@ -14,10 +15,10 @@ const Layout = () => {
         <BrowserRouter>
         <NavBar />
         <Switch>
-        <Route exact path={"/services/:serv_id/category/:cat_id"} component={Vehicles} />
-        <Route exact path={"/services"} component={Vehicles} />
-        <Route exact path={"/contact"} component={Planets} />
-        <Route exact path={"/"} component={People} />                                                     
+        <Route exact path={"/vehicles"} component={Vehicles} />
+        <Route exact path={"/planets"} component={Planets} />
+        <Route exact path={"/people/cardpeople"} component={CardPeople} />
+        <Route exact path={"/people"} component={People} />                                                     
         <Route component={NotFound} />
         </Switch>
         </BrowserRouter>

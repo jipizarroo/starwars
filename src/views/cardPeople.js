@@ -1,10 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import CardPeople from './cardPeople';
 import { Context } from '../store/appContext';
 
 
-const People = () => {
+const CardPeople = () => {
     return (
         <Context.Consumer>
             {
@@ -23,12 +22,11 @@ const People = () => {
                                                     <h5 className="card-title">{item.name}</h5>
                                                     <ul>
                                                                 <li key={i}>
-                                                                   Height: {item.height}
+                                                                   Height: 
                                                                 </li>
                                                                 <li key={i}>
-                                                                    Mass: {item.mass}
+                                                                    Mass: 
                                                                 </li>
-                                                                <Link className="btn btn-primary" to="/people/cardPeople">More Info...</Link>
                                                     </ul>
                                                     
                                                 </div>
@@ -39,16 +37,6 @@ const People = () => {
                                 }
 
                             </div>
-                            <div className="row">
-                                <div className="col d-flex justify-content-between">
-                                    <button className="btn btn-info" onClick={() => context.actions.getPeople(context.store.people.previous)} >
-                                        Previous
-                                    </button>
-                                    <button className="btn btn-info" onClick={() => context.actions.getPeople(context.store.people.next)}>
-                                        Next
-                                    </button>
-                                </div>
-                            </div>
                         </div>
                     )
                 }
@@ -57,4 +45,4 @@ const People = () => {
     )
 }
 
-export default People; 
+export default CardPeople; 
