@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import { Context } from '../store/appContext';
 
 
@@ -29,8 +30,9 @@ const Planets = () => {
                                                                 <li key={i}>
                                                                     Population: {items.population}
                                                                 </li>
+
                                                             </ul>
-                                                           
+                                                            <Link onClick={() => context.actions.getKeyPlanets(i)} className="btn btn-primary" to="/planets/cardplanets">More Info...</Link>
                                                         </div>
                                                     </div>
                                                     </div>

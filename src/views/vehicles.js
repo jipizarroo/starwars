@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import {Link} from 'react-router-dom';
 import { Context } from './../store/appContext';
 
 
@@ -41,6 +42,7 @@ const Vehicles = (props) => {
                                                                 Manufacturer: {items.manufacturer} 
                                                                 </li>
                                                             </ul>
+                                                            <Link onClick={() => context.actions.getKeyVehicles(i)} className="btn btn-primary" to="/vehicles/cardvehicles">More Info...</Link>
                                                            
                                                         </div>
                                                     </div>

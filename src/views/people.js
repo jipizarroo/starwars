@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import CardPeople from './cardPeople';
 import { Context } from '../store/appContext';
 
 
@@ -28,7 +27,7 @@ const People = () => {
                                                                 <li key={i}>
                                                                     Mass: {item.mass}
                                                                 </li>
-                                                                <Link className="btn btn-primary" to="/people/cardPeople">More Info...</Link>
+                                                                <Link onClick={() => context.actions.getKeyPeople(i)} className="btn btn-primary" to="/people/cardPeople">More Info...</Link>
                                                     </ul>
                                                     
                                                 </div>

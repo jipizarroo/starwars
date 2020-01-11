@@ -2,7 +2,7 @@ import React from 'react';
 import { Context } from '../store/appContext';
 
 
-const CardPeople = () => {
+const CardPlanets = () => {
     return (
         <Context.Consumer>
             {
@@ -11,33 +11,30 @@ const CardPeople = () => {
                         <div className="container">
                             <div className="row">
                                 {
-                                    !!context.store.people.results &&
-                                    context.store.people.results.map((item, i) => {
-                                        if( i === context.store.KeyPeople)
+                                    !!context.store.planets.results &&
+                                    context.store.planets.results.map((item, i) => {
+                                        if( i === context.store.KeyPlanets)
                                         return (
                                             <div className="col d-flex"  key={i} >
                                                 <div className="card">
-                                                <img src="https://cdn.mos.cms.futurecdn.net/LGoEDSKPxnLjMpJv4VaEK5-970-80.jpg" className="card-img-top" />
+                                                <img src="https://res.cloudinary.com/jerrick/image/upload/fl_progressive,q_auto,w_1024/n2suqqwwzf1k5lsuzwly.jpg" className="card-img-top" />
                                                 <div className="card-body">
                                                     <h5 className="card-title">{item.name}</h5>
                                                     <ul>    
                                                                 <li key={i}>
-                                                                   Height: {item.height}
+                                                                   Rotation Period:{item.rotation_period}
                                                                 </li>
                                                                 <li key={i}>
-                                                                    Mass: {item.mass}
+                                                                    Orbital Period: {item.orbital_period}
                                                                 </li>
                                                                 <li key={i}>
-                                                                    Hair Color: {item.hair_color}
+                                                                    Diameter: {item.diameter}
                                                                 </li>
                                                                 <li key={i}>
-                                                                    Skin Color: {item.skin_color}
+                                                                    Climate: {item.climate}
                                                                 </li>
                                                                 <li key={i}>
-                                                                    Birth Year: {item.birth_year}
-                                                                </li>
-                                                                <li key={i}>
-                                                                    Gender: {item.gender}
+                                                                    Terrain: {item.terrain}
                                                                 </li>
                                                     </ul>
                                                     
@@ -57,4 +54,4 @@ const CardPeople = () => {
     )
 }
 
-export default CardPeople; 
+export default CardPlanets; 

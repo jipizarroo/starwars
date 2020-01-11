@@ -2,7 +2,7 @@ import React from 'react';
 import { Context } from '../store/appContext';
 
 
-const CardPeople = () => {
+const CardVehicles = () => {
     return (
         <Context.Consumer>
             {
@@ -11,33 +11,33 @@ const CardPeople = () => {
                         <div className="container">
                             <div className="row">
                                 {
-                                    !!context.store.people.results &&
-                                    context.store.people.results.map((item, i) => {
-                                        if( i === context.store.KeyPeople)
+                                    !!context.store.vehicles.results &&
+                                    context.store.vehicles.results.map((item, i) => {
+                                        if( i === context.store.KeyVehicles)
                                         return (
                                             <div className="col d-flex"  key={i} >
                                                 <div className="card">
-                                                <img src="https://cdn.mos.cms.futurecdn.net/LGoEDSKPxnLjMpJv4VaEK5-970-80.jpg" className="card-img-top" />
+                                                <img src="https://cdn11.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/306439/437095/saga2007atap__40030.1567221520.jpg?c=2&imbypass=on" className="card-img-top" />
                                                 <div className="card-body">
                                                     <h5 className="card-title">{item.name}</h5>
                                                     <ul>    
                                                                 <li key={i}>
-                                                                   Height: {item.height}
+                                                                   Model: {item.model}
                                                                 </li>
                                                                 <li key={i}>
-                                                                    Mass: {item.mass}
+                                                                    Manufacturer: {item.manufacturer}
                                                                 </li>
                                                                 <li key={i}>
-                                                                    Hair Color: {item.hair_color}
+                                                                    Max. Atmosphering Speed: {item.max_atmosphering_speed}
                                                                 </li>
                                                                 <li key={i}>
-                                                                    Skin Color: {item.skin_color}
+                                                                    Crew Capacity: {item.crew}
                                                                 </li>
                                                                 <li key={i}>
-                                                                    Birth Year: {item.birth_year}
+                                                                    Passenger Capacity: {item.passengers}
                                                                 </li>
                                                                 <li key={i}>
-                                                                    Gender: {item.gender}
+                                                                    Vehicle Class: {item.vehicle_class}
                                                                 </li>
                                                     </ul>
                                                     
@@ -57,4 +57,4 @@ const CardPeople = () => {
     )
 }
 
-export default CardPeople; 
+export default CardVehicles; 
